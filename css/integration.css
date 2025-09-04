@@ -1,5 +1,23 @@
 /* Integration Page Specific Styles */
 
+/* Active Navigation State */
+.nav-link.active {
+    color: var(--primary-color) !important;
+    font-weight: var(--font-weight-semibold);
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--primary-color);
+    border-radius: 1px;
+}
+
 /* Integration Hero Section */
 .integration-hero {
     background: linear-gradient(135deg, #1B9AAA 0%, #06D6A0 100%);
@@ -39,11 +57,13 @@
     align-items: center;
     justify-content: center;
     background: var(--white);
-    color: #1B9AAA;
     padding: 1rem 2rem;
     border-radius: var(--border-radius);
-    font-weight: var(--font-weight-bold);
-    font-size: 1.2rem;
+}
+
+.safetyculture-logo-img {
+    height: 60px;
+    filter: none;
 }
 
 .integration-symbol {

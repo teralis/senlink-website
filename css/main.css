@@ -1261,3 +1261,62 @@ body {
         transform: none !important;
     }
 }
+
+/* Featured Integration Card */
+.featured-integration {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-integration::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: rotate(45deg);
+}
+
+.featured-integration .solution-icon {
+    color: var(--white);
+    z-index: 2;
+    position: relative;
+}
+
+.featured-integration h3 {
+    color: var(--white);
+    z-index: 2;
+    position: relative;
+}
+
+.featured-integration p {
+    color: rgba(255, 255, 255, 0.9);
+    z-index: 2;
+    position: relative;
+}
+
+.integration-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: var(--font-weight-semibold);
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: var(--border-radius);
+    transition: all var(--transition-normal);
+    z-index: 2;
+    position: relative;
+}
+
+.integration-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(5px);
+}
