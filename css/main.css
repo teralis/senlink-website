@@ -970,6 +970,7 @@ body {
     }
 }
 
+/* Mobile Navigation - iPad and smaller */
 @media (max-width: 768px) {
     .nav-menu {
         position: fixed;
@@ -983,6 +984,9 @@ body {
         box-shadow: var(--shadow-lg);
         padding: 2rem 0;
         gap: 1rem;
+        z-index: 999;
+        height: calc(100vh - 70px);
+        overflow-y: auto;
     }
 
     .nav-menu.active {
@@ -991,6 +995,22 @@ body {
 
     .nav-toggle {
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+        cursor: pointer;
+        z-index: 1001;
+        position: relative;
+    }
+    
+    .nav-toggle .bar {
+        width: 25px;
+        height: 3px;
+        background: var(--dark-color);
+        margin: 3px 0;
+        transition: 0.3s;
+        border-radius: 2px;
     }
 
     .nav-toggle.active .bar:nth-child(2) {
@@ -1003,6 +1023,33 @@ body {
 
     .nav-toggle.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .nav-menu li {
+        margin: 0;
+        border-bottom: 1px solid rgba(27, 154, 170, 0.1);
+    }
+    
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-menu .nav-link {
+        display: block;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        font-weight: var(--font-weight-medium);
+        color: var(--dark-color);
+        transition: all 0.3s ease;
+    }
+    
+    .nav-menu .nav-link:hover {
+        background: var(--light-gray);
+        color: var(--primary-color);
+    }
+    
+    .nav-menu .nav-link::after {
+        display: none;
     }
     
     .hero-title {
@@ -1259,6 +1306,28 @@ body {
     
     .hero-visual {
         transform: none !important;
+    }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+    
+    .nav-toggle {
+        padding: 0.75rem;
+        margin-right: -0.5rem;
+    }
+    
+    .nav-toggle .bar {
+        width: 30px;
+        height: 4px;
+        margin: 4px 0;
+    }
+    
+    .logo {
+        height: 35px;
     }
 }
 
