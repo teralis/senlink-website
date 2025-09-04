@@ -34,20 +34,25 @@ class SenlinkWebsite {
             });
         });
 
-        // Smooth scrolling for navigation links
+        // Smooth scrolling for navigation links (only for anchor links)
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
+                const href = link.getAttribute('href');
                 
-                if (targetSection) {
-                    const offsetTop = targetSection.offsetTop - 80;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
+                // Only prevent default and smooth scroll for anchor links (starting with #)
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const targetSection = document.querySelector(href);
+                    
+                    if (targetSection) {
+                        const offsetTop = targetSection.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
                 }
+                // Let external links (like safetyculture.html) work normally
             });
         });
 
